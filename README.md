@@ -1,6 +1,8 @@
 # Whisk
 
-**TODO: Add description**
+A simple twisty puzzle scramble library, written in Elixir.
+
+**Please note:** Generated scrambles are not checked for WCA compliance. For any kind of WCA-compliant scrambles, use [TNoodle](https://www.worldcubeassociation.org/regulations/scrambles/).
 
 ## Installation
 
@@ -19,3 +21,6 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/whisk>.
 
+## Acknowledgements
+* Inspired by the [Scrambler gem](https://github.com/timhabermaas/scrambler), written by [@timhabermaas](https://github.com/timhabermaas)
+* Thanks Lou Whiting for the name idea :)
