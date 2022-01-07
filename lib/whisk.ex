@@ -2,7 +2,7 @@ defmodule Whisk do
   @moduledoc """
   A twisty puzzle scramble generator.
 
-  ## Exmples
+  ## Examples
 
   ```
   iex> Whisk.scramble("3x3")
