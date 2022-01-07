@@ -1,12 +1,25 @@
 defmodule Whisk do
   @moduledoc """
   A twisty puzzle scramble generator.
+
+  ## Exmples
+
+  ```
+  iex> Whisk.scramble("3x3")
+  "L F2 U R D B U2 R F' R F R2 D2 B R' B' D R B U"
+
+  iex> Whisk.scramble("2x2", length: 12)
+  "R2 F R' U2 F R U2 R2 F2 R F2 U2"
+  ```
+
   """
 
   @typedoc """
-  Supported puzzle types are:
-  - "2x2"
-  - "3x3"
+  A string representation of a puzzle name.
+
+  Currently supported values are:
+  - `"2x2"`
+  - `"3x3"`
   """
   @type puzzle_type :: String.t()
 
@@ -31,6 +44,9 @@ defmodule Whisk do
   Generate a scramble for a puzzle type.
 
   Passing an unsupported puzzle type will generate an error.
+
+  ## Options
+    - `:length` - the number of moves in the scramble
   """
   @spec scramble(puzzle_type(), list()) :: scramble()
   def scramble(puzzle_name, opts \\ []) do
