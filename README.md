@@ -10,7 +10,7 @@ by adding `whisk` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:whisk, "~> 0.1.0"}
+    {:whisk, "~> 0.0.1"}
   ]
 end
 ```
