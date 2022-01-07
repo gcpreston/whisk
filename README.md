@@ -4,6 +4,13 @@ A simple twisty puzzle scramble library, written in Elixir.
 
 **Please note:** Generated scrambles are not checked for WCA compliance. For any kind of WCA-compliant scrambles, use [TNoodle](https://www.worldcubeassociation.org/regulations/scrambles/).
 
+## Usage
+
+```
+iex> Whisk.scramble("3x3")
+"L F2 U R D B U2 R F' R F R2 D2 B R' B' D R B U"
+```
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed

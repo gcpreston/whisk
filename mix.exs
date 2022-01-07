@@ -8,14 +8,11 @@ defmodule Whisk.MixProject do
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-
-      # Docs
+      description: description(),
+      package: package(),
       name: "Whisk",
       source_url: "https://github.com/gcpreston/whisk",
-      docs: [
-        main: "Whisk",
-        extras: ["README.md"]
-      ]
+      docs: docs()
     ]
   end
 
@@ -28,6 +25,25 @@ defmodule Whisk.MixProject do
   defp deps do
     [
       {:ex_doc, "~> 0.24", only: :dev, runtime: false}
+    ]
+  end
+
+  defp description do
+    "A twisty puzzle scramble generator."
+  end
+
+  defp package do
+    [
+      files: ~w(lib .formatter.exs mix.exs README.md LICENSE.md),
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/gcpreston/whisk"}
+    ]
+  end
+
+  defp docs do
+    [
+      main: "README",
+      extras: ["README.md"]
     ]
   end
 end
