@@ -42,8 +42,8 @@ defmodule Whisk.MixProject do
 
   defp docs do
     [
-      main: "README",
-      extras: ["README.md"]
+      extras: ["README.md"],
+      main: "readme"
     ]
   end
 end
