@@ -83,9 +83,9 @@ defmodule WhiskTest do
   describe "4x4" do
     @valid_moves ~w(R R' R2 Rw Rw' Rw2 L L' L2 F F' F2 Fw Fw' Fw2 B B' B2 U U' U2 Uw Uw' Uw2 D D' D2)
 
-    test "defaults to length 45" do
+    test "defaults to length 40" do
       scramble = Whisk.scramble("4x4")
-      assert Enum.count(String.split(scramble)) == 45
+      assert Enum.count(String.split(scramble)) == 40
     end
 
     test "length can be customized" do

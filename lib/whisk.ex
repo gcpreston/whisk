@@ -38,7 +38,7 @@ defmodule Whisk do
 
   @puzzle_spec_2x2 {[~w(R), ~w(F), ~w(U)], ["", "'", "2"], 10}
   @puzzle_spec_3x3 {[~w(R L), ~w(F B), ~w(U D)], ["", "'", "2"], 20}
-  @puzzle_spec_4x4 {[~w(R L Rw), ~w(F B Fw), ~w(U D Uw)], ["", "'", "2"], 45}
+  @puzzle_spec_4x4 {[~w(R L Rw), ~w(F B Fw), ~w(U D Uw)], ["", "'", "2"], 40}
   @puzzle_spec_5x5 {[~w(R L Rw Lw), ~w(F B Fw Bw), ~w(U D Uw Dw)], ["", "'", "2"], 60}
 
   ## API
