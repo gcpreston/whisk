@@ -1,5 +1,7 @@
 defmodule Whisk do
-  @moduledoc false
+  @moduledoc """
+  The scrambler.
+  """
 
   @typedoc """
   A string representation of a puzzle type.
@@ -39,6 +41,7 @@ defmodule Whisk do
   ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7", "Skewb"]
   ```
   """
+  @spec puzzle_types() :: list()
   def puzzle_types do
     ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7", "Skewb"]
   end
