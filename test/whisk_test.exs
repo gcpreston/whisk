@@ -237,9 +237,9 @@ defmodule WhiskTest do
 
     test "does not contain subsequent moves on the same axis" do
       move_groups = [
-        ~w(R R' R2 Rw Rw' Rw2 3Rw 3Rw' 3Rw2 L L' L2 Lw Lw' Lw2),
-        ~w(F F' F2 Fw Fw' Fw2 3Fw 3Fw' 3Fw2 B B' B2 Bw Bw' Bw2),
-        ~w(U U' U2 Uw Uw' Uw2 3Uw 3Uw' 3Uw2 D D' D2 Dw Dw' Dw2)
+        ~w(R R' R2 Rw Rw' Rw2 3Rw 3Rw' 3Rw2 L L' L2 Lw Lw' Lw2 3Lw 3Lw' 3Lw2),
+        ~w(F F' F2 Fw Fw' Fw2 3Fw 3Fw' 3Fw2 B B' B2 Bw Bw' Bw2 3Bw 3Bw' 3Bw2),
+        ~w(U U' U2 Uw Uw' Uw2 3Uw 3Uw' 3Uw2 D D' D2 Dw Dw' Dw2 3Dw 3Dw' 3Dw2)
       ]
 
       move_group_index = fn move ->
