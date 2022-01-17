@@ -2,6 +2,10 @@ defmodule Whisk do
   @moduledoc """
   A twisty puzzle scramble generator.
 
+  Currently supports:
+  - 2x2-7x7
+  - Skewb
+
   ## Examples
 
   ```
@@ -17,10 +21,7 @@ defmodule Whisk do
   @typedoc """
   A string representation of a puzzle type.
 
-  Currently supported values are:
-  - `"2x2"`
-  - `"3x3"`
-  - `"4x4"`
+  See puzzle_types/0 for supported values.
   """
   @type puzzle_type :: String.t()
 
