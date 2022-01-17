@@ -1,27 +1,10 @@
 defmodule Whisk do
-  @moduledoc """
-  A twisty puzzle scramble generator.
-
-  Currently supports:
-  - 2x2-7x7
-  - Skewb
-
-  ## Examples
-
-  ```
-  iex> Whisk.scramble("3x3")
-  "L F2 U R D B U2 R F' R F R2 D2 B R' B' D R B U"
-
-  iex> Whisk.scramble("2x2", length: 12)
-  "R2 F R' U2 F R U2 R2 F2 R F2 U2"
-  ```
-
-  """
+  @moduledoc false
 
   @typedoc """
   A string representation of a puzzle type.
 
-  See puzzle_types/0 for supported values.
+  See `puzzle_types/0` for supported values.
   """
   @type puzzle_type :: String.t()
 
@@ -67,6 +50,17 @@ defmodule Whisk do
 
   ## Options
     - `:length` - the number of moves in the scramble
+
+  ## Examples
+
+  ```
+  iex> Whisk.scramble("3x3")
+  "L F2 U R D B U2 R F' R F R2 D2 B R' B' D R B U"
+
+  iex> Whisk.scramble("Skewb", length: 12)
+  "L R B' R U' R' B L' U' B' L R U' R' L'"
+  ```
+
   """
   @spec scramble(puzzle_type(), list()) :: scramble()
   def scramble(puzzle_name, opts \\ []) do

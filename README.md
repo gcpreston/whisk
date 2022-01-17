@@ -2,7 +2,13 @@
 
 A simple twisty puzzle scramble library, written in Elixir.
 
+Currently supports puzzle types
+- 2x2 - 7x7
+- Skewb
+
 **Please note:** Generated scrambles are not checked for WCA compliance. For any kind of WCA-compliant scrambles, use [TNoodle](https://www.worldcubeassociation.org/regulations/scrambles/).
+
+[Docs](https://hexdocs.pm/whisk) | [API Reference](https://hexdocs.pm/whisk/Whisk.html)
 
 ## Usage
 
@@ -20,8 +26,6 @@ def deps do
   ]
 end
 ```
-
-[Documentation](https://hexdocs.pm/whisk)
 
 ## Acknowledgements
 * Inspired by the [Scrambler gem](https://github.com/timhabermaas/scrambler), written by [@timhabermaas](https://github.com/timhabermaas)
