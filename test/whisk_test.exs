@@ -198,7 +198,7 @@ defmodule WhiskTest do
         Enum.find_index(move_groups, fn group -> move in group end)
       end
 
-      scramble = Whisk.scramble("5x5")
+      scramble = Whisk.scramble("6x6")
 
       for [move1, move2] <- Enum.chunk_every(String.split(scramble), 2, 1, :discard) do
         refute move_group_index.(move1) == move_group_index.(move2)
