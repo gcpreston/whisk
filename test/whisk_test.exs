@@ -2,10 +2,6 @@ defmodule WhiskTest do
   use ExUnit.Case
   doctest Whisk, only: [puzzle_types: 0]
 
-  test "puzzle_types/0" do
-    assert Whisk.puzzle_types() == ["2x2", "3x3", "4x4", "5x5"]
-  end
-
   describe "2x2" do
     @valid_moves ~w(R R' R2 F F' F2 U U' U2)
 
