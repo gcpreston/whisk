@@ -15,7 +15,7 @@ defmodule Whisk do
   """
 
   @typedoc """
-  A string representation of a puzzle name.
+  A string representation of a puzzle type.
 
   Currently supported values are:
   - `"2x2"`
@@ -39,6 +39,13 @@ defmodule Whisk do
   @puzzle_spec_3x3 {[~w(R L), ~w(F B), ~w(U D)], ["", "'", "2"], 20}
 
   ## API
+
+  @doc """
+  Returns a list of supported puzzle types.
+  """
+  def puzzle_types do
+    ["2x2", "3x3"]
+  end
 
   @doc """
   Generate a scramble for a puzzle type.
