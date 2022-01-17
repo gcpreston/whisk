@@ -42,6 +42,11 @@ defmodule Whisk do
 
   @doc """
   Returns a list of supported puzzle types.
+
+  ```
+  iex> Whisk.puzzle_types()
+  ["2x2", "3x3"]
+  ```
   """
   def puzzle_types do
     ["2x2", "3x3"]

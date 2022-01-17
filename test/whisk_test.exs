@@ -1,5 +1,6 @@
 defmodule WhiskTest do
   use ExUnit.Case
+  doctest Whisk, only: [puzzle_types: 0]
 
   test "puzzle_types/0" do
     assert Whisk.puzzle_types() == ["2x2", "3x3"]
