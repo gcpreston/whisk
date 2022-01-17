@@ -253,4 +253,40 @@ defmodule WhiskTest do
       end
     end
   end
+
+  describe "Skewb" do
+    @valid_moves ~w(R R' L L' U U' B B')
+    @move_groups [~w(R R'), ~w(L L'), ~w(U U'), ~w(B B')]
+
+    test "defaults to length 11" do
+      scramble = Whisk.scramble("Skewb")
+      assert Enum.count(String.split(scramble)) == 11
+    end
+
+    test "length can be customized" do
+      scramble = Whisk.scramble("Skewb", length: 14)
+      assert Enum.count(String.split(scramble)) == 14
+    end
+
+    test "negative length gives empty scramble" do
+      assert String.length(Whisk.scramble("Skewb", length: -1)) == 0
+    end
+
+    test "contains only valid moves" do
+      scramble = Whisk.scramble("Skewb")
+      assert Enum.all?(String.split(scramble), fn move -> move in @valid_moves end)
+    end
+
+    test "does not contain subsequent moves on the same axis" do
+      move_group_index = fn move ->
+        Enum.find_index(@move_groups, fn group -> move in group end)
+      end
+
+      scramble = Whisk.scramble("Skewb")
+
+      for [move1, move2] <- Enum.chunk_every(String.split(scramble), 2, 1, :discard) do
+        refute move_group_index.(move1) == move_group_index.(move2)
+      end
+    end
+  end
 end

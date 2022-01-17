@@ -43,6 +43,8 @@ defmodule Whisk do
   @puzzle_spec_6x6 {[~w(R L Rw Lw 3Rw), ~w(F B Fw Bw 3Fw), ~w(U D Uw Dw 3Uw)], ["", "'", "2"], 80}
   @puzzle_spec_7x7 {[~w(R L Rw Lw 3Rw 3Lw), ~w(F B Fw Bw 3Fw 3Bw), ~w(U D Uw Dw 3Uw 3Dw)], ["", "'", "2"], 100}
 
+  @puzzle_spec_skewb {[~w(R), ~w(L), ~w(U), ~w(B)], ["", "'"], 11}
+
   ## API
 
   @doc """
@@ -50,11 +52,11 @@ defmodule Whisk do
 
   ```
   iex> Whisk.puzzle_types()
-  ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7"]
+  ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7", "Skewb"]
   ```
   """
   def puzzle_types do
-    ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7"]
+    ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7", "Skewb"]
   end
 
   @doc """
@@ -97,6 +99,10 @@ defmodule Whisk do
 
   defp puzzle_spec("7x7") do
     @puzzle_spec_7x7
+  end
+
+  defp puzzle_spec("Skewb") do
+    @puzzle_spec_skewb
   end
 
   defp puzzle_spec(_) do
