@@ -5,10 +5,12 @@ A simple twisty puzzle scramble library, written in Elixir.
 Currently supports puzzle types
 - 2x2 - 7x7
 - Skewb
+- Pyraminx
+- Megaminx
 
 **Please note:** Generated scrambles are not checked for WCA compliance. For any kind of WCA-compliant scrambles, use [TNoodle](https://www.worldcubeassociation.org/regulations/scrambles/).
 
-[Docs](https://hexdocs.pm/whisk) | [API Reference](https://hexdocs.pm/whisk/Whisk.html)
+[Sourc](https://github.com/gcpreston/whisk) | [Docs](https://hexdocs.pm/whisk) | [API Reference](https://hexdocs.pm/whisk/Whisk.html)
 
 ## Usage
 
@@ -22,11 +24,11 @@ iex> Whisk.scramble("3x3")
 ```elixir
 def deps do
   [
-    {:whisk, "~> 0.0.1"}
+    {:whisk, "~> 0.1.0"}
   ]
 end
 ```
 
 ## Acknowledgements
 * Inspired by the [Scrambler gem](https://github.com/timhabermaas/scrambler), written by [@timhabermaas](https://github.com/timhabermaas)
-* Thanks Lou Whiting for the name idea :)
+* Thanks Lou for the name idea :)
