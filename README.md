@@ -10,7 +10,7 @@ Currently supports puzzle types
 
 **Please note:** Generated scrambles are not checked for WCA compliance. For any kind of WCA-compliant scrambles, use [TNoodle](https://www.worldcubeassociation.org/regulations/scrambles/).
 
-[Sourc](https://github.com/gcpreston/whisk) | [Docs](https://hexdocs.pm/whisk) | [API Reference](https://hexdocs.pm/whisk/Whisk.html)
+[Source](https://github.com/gcpreston/whisk) | [Docs](https://hexdocs.pm/whisk) | [API Reference](https://hexdocs.pm/whisk/Whisk.html)
 
 ## Usage
 
