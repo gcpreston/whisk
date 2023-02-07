@@ -64,14 +64,14 @@ defmodule WhiskTest do
       Whisk.scramble("3x3")
     end
 
-    test "defaults to length 20" do
+    test "defaults to length 23" do
       scramble = Whisk.scramble(@puzzle_name)
-      assert Enum.count(String.split(scramble)) == 20
+      assert Enum.count(String.split(scramble)) == 23
     end
 
     test "length can be customized" do
-      scramble = Whisk.scramble(@puzzle_name, length: 25)
-      assert Enum.count(String.split(scramble)) == 25
+      scramble = Whisk.scramble(@puzzle_name, length: 30)
+      assert Enum.count(String.split(scramble)) == 30
     end
 
     test "negative length raises" do
