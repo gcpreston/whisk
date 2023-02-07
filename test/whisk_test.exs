@@ -100,6 +100,18 @@ defmodule WhiskTest do
     end
   end
 
+  describe "3x3 OH" do
+    test "accepts string" do
+      Whisk.scramble("3x3 OH")
+    end
+  end
+
+  describe "3x3 BLD" do
+    test "accepts string" do
+      Whisk.scramble("3x3 BLD")
+    end
+  end
+
   describe "4x4" do
     @puzzle_name :"4x4"
     @valid_moves ~w(R R' R2 Rw Rw' Rw2 L L' L2 F F' F2 Fw Fw' Fw2 B B' B2 U U' U2 Uw Uw' Uw2 D D' D2)
