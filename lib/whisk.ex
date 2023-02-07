@@ -58,12 +58,24 @@ defmodule Whisk do
 
   ```
   iex> Whisk.puzzle_types()
-  [:"2x2", :"3x3", :"4x4", :"5x5", :"6x6", :"7x7", :Skewb, :Pyraminx, :Megaminx]
+  [:"2x2", :"3x3", :"3x3 OH", :"3x3 BLD", :"4x4", :"5x5", :"6x6", :"7x7", :Skewb, :Pyraminx, :Megaminx]
   ```
   """
   @spec puzzle_types() :: [atom()]
   def puzzle_types do
-    [:"2x2", :"3x3", :"4x4", :"5x5", :"6x6", :"7x7", :Skewb, :Pyraminx, :Megaminx]
+    [
+      :"2x2",
+      :"3x3",
+      :"3x3 OH",
+      :"3x3 BLD",
+      :"4x4",
+      :"5x5",
+      :"6x6",
+      :"7x7",
+      :Skewb,
+      :Pyraminx,
+      :Megaminx
+    ]
   end
 
   @doc """
@@ -100,6 +112,7 @@ defmodule Whisk do
       rescue
         ArgumentError -> raise "Unsupported puzzle type: #{inspect(puzzle_name)}"
       end
+
     scramble(puzzle_type_atom, opts)
   end
 
@@ -109,21 +122,27 @@ defmodule Whisk do
 
   defp scramble_from_spec(spec, opts)
 
-  defp scramble_from_spec({
-    {axes1, modifiers1, default_length},
-    {axes2, modifiers2, length2},
-    default_reps
-  }, opts) do
+  defp scramble_from_spec(
+         {
+           {axes1, modifiers1, default_length},
+           {axes2, modifiers2, length2},
+           default_reps
+         },
+         opts
+       ) do
     validate_opts(opts)
     length1 = opts[:length] || default_length
     reps = opts[:reps] || default_reps
 
-    Enum.join(for _ <- 1..reps do
-      part1 = generate_scramble(axes1, modifiers1, length1)
-      part2 = generate_addon_scramble(axes2, modifiers2, length2)
+    Enum.join(
+      for _ <- 1..reps do
+        part1 = generate_scramble(axes1, modifiers1, length1)
+        part2 = generate_addon_scramble(axes2, modifiers2, length2)
 
-      String.trim(part1 <> " " <> part2)
-    end, " ")
+        String.trim(part1 <> " " <> part2)
+      end,
+      " "
+    )
   end
 
   defp scramble_from_spec({axes, modifiers, default_length}, opts) do
@@ -147,6 +166,8 @@ defmodule Whisk do
     case puzzle_name do
       :"2x2" -> @puzzle_spec_2x2
       :"3x3" -> @puzzle_spec_3x3
+      :"3x3 OH" -> @puzzle_spec_3x3
+      :"3x3 BLD" -> @puzzle_spec_3x3
       :"4x4" -> @puzzle_spec_4x4
       :"5x5" -> @puzzle_spec_5x5
       :"6x6" -> @puzzle_spec_6x6
@@ -197,11 +218,17 @@ defmodule Whisk do
   end
 
   defp generate_addon_scramble(axes, modifiers, length) when is_number(length) do
-    Enum.join(for axis <- axes do
-      Enum.join(for _ <- 1..length//1 do
-        Enum.random(axis) <> Enum.random(modifiers)
-      end, " ")
-    end, " ")
+    Enum.join(
+      for axis <- axes do
+        Enum.join(
+          for _ <- 1..length//1 do
+            Enum.random(axis) <> Enum.random(modifiers)
+          end,
+          " "
+        )
+      end,
+      " "
+    )
   end
 
   defp initial_axis_index(axes) when length(axes) == 1 do
